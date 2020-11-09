@@ -1,0 +1,11 @@
+<% provide :title, t("title.main_title") %>
+<h1><%= t "help" %></h1>
+<p>
+  <%= t "help_param_content_1" %>
+  <a href="http://www.railstutorial.org/help"><%= t("base_title") %></a>
+</p>
+<p>
+  <%= t "help_param_content_2_begin" %>
+  <%= link_to t("tutorial"), "http://www.railstutorial.org/book", class: "font-weight-bold" %>
+  <%= t "help_param_content_2_end" %>
+</p>

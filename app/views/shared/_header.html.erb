@@ -1,0 +1,22 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <%= link_to "sample app", "#", id: "logo" %>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to t("home"), "#" %></li>
+        <li><%= link_to t("help"), "#" %></li>
+        <li><%= link_to t("login"), "#" %></li>
+        <li>
+          <%= link_to locale: :en do %>
+            <%= image_tag("EN.png", alt: t("english"), class: "img-lang") %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to locale: :vi do %>
+            <%= image_tag("VN.png", alt: t("vietnamese"), class: "img-lang") %>
+          <% end %>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
