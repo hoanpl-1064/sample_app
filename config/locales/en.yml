@@ -19,3 +19,5 @@ en:
   tutorial: "Ruby on Rails Tutorial"
   english: "Tiếng Anh"
   vietnamese: "Vietnamese"
+  account:
+    sign_up: "Sign up"
