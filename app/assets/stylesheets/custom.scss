@@ -1,0 +1,45 @@
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+$color_milk : #fff;
+
+/* universal */
+body {
+  padding-top: 60px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+}
+
+.center h1 {
+  margin-bottom: 10px;
+}
+
+/* header */
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: $color_milk;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+}
+
+#logo:hover {
+  color: $color_milk;
+  text-decoration: none;
+}
+
+.img-lang{
+  width:30px;
+}
