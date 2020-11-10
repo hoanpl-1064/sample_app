@@ -19,3 +19,5 @@ vi:
   tutorial: "Ruby on Rails Tutorial"
   english: "English"
   vietnamese: "Tiếng Việt"
+  account:
+    sign_up: "Đăng ký"
