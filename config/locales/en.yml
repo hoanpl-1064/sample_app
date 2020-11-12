@@ -21,3 +21,15 @@ en:
   vietnamese: "Vietnamese"
   account:
     sign_up: "Sign up"
+    create_my_account: "Create my account"
+    name: "Fullname"
+    email: "Email Address"
+    passwd: "Password"
+    confirmation: "Confirmation"
+    create_success: "Account successfully created"
+    reset: "Reset"
+    account_nil: "Can not find any account. Please create a new"
+    sign_up_errors:
+      zero: "The form contains %{count} errors"
+      one: "The form contains %{count} error"
+      other: "The form contains %{count} errors"
