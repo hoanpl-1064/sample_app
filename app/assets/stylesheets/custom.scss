@@ -122,3 +122,21 @@ input {
     color: $state-danger-text;
   }
 }
+
+.mt-2{
+  margin-top: 20px;
+}
+
+.checkbox{
+  margin: 10px 0;
+
+  .remember__me{
+    font-weight: normal;
+    margin-left: 20px;
+  }
+}
+
+#session_remember_me {
+  margin-left: 0;
+  width: auto;
+}
