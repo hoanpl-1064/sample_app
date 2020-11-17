@@ -1,3 +1,9 @@
 user:
   email:
     max_length: 255
+    min_length: 6
+  avatar:
+    max_size: 80
+    min_size: 50
+page:
+  per_page: 5

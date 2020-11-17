@@ -9,6 +9,10 @@
       <%= f.email_field :email, class: "form-control" %>
       <%= f.label :password, t("account.passwd") %>
       <%= f.password_field :password, class: "form-control" %>
+      <%= f.label :remember_me, class: "checkbox inline" do %>
+        <%= f.check_box :remember_me %>
+        <span class="remember__me"><%= t "account.remember_me" %></span>
+      <% end %>
       <%= f.submit t("btn_submit"), class: "btn btn-primary" %>
     <% end %>
     <p class="mt-2 text-center">

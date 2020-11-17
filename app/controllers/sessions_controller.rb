@@ -1,10 +1,14 @@
 class SessionsController < ApplicationController
+  def new
+    redirect_to root_path if logged_in?
+  end
+
   def create
-    user = User.find_by email: params[:session][:email].downcase
-    if user&.authenticate params[:session][:password]
-      # This method came from helper, call module from app_controller
-      log_in user
-      redirect_to user
+    @user = User.find_by email: params[:session][:email].downcase
+    if @user&.authenticate params[:session][:password]
+      log_in @user
+      params[:session][:remember_me] == "1" ? remember(@user) : forget(@user)
+      redirect_back_or @user
     else
       flash.now[:danger] = t "account.invalid_user"
       render :new
