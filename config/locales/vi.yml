@@ -39,3 +39,4 @@ vi:
     login: "Đăng nhập"
     newbie: "Tôi là một người mới"
     invalid_user: "Tài khoản không tồn tại hoặc mật khẩu không chính xác"
+    remember_me: "Ghi nhớ trạng thái đăng nhập"

@@ -42,3 +42,4 @@ en:
     login: "Login"
     newbie: "I am a new member"
     invalid_user: "Invalid email password combination"
+    remember_me: "Remember me on this computer"
