@@ -9,14 +9,7 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= form_for @user, url: signup_path do |f| %>
-      <%= f.label :name, t("account.name") %>
-      <%= f.text_field :name %>
-      <%= f.label :email, t("account.email") %>
-      <%= f.email_field :email %>
-      <%= f.label :password, t("account.passwd") %>
-      <%= f.password_field :password %>
-      <%= f.label :password_confirmation, t("account.confirmation") %>
-      <%= f.password_field :password_confirmation %>
+      <%= render partial: "shared/form", locals: {f:f} %>
       <%= f.submit t("account.create_my_account"), class: "btn btn-primary" %>
     <% end %>
   </div>

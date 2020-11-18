@@ -7,10 +7,17 @@ class User < ApplicationRecord
   validates :email, presence: true,
     length: {maximum: Settings.user.email.max_length},
     format: {with: VALID_EMAIL_REGEX}
+  validates :password, presence: true,
+    length: {minimum: Settings.user.email.min_length},
+    allow_nil: true
+  # allow_nil: true to ignore the checking name
+  # and email when we update (it filled)
 
   has_secure_password
 
-  def User.digest string
+  scope :sort_name, ->{order :name}
+
+  def self.digest string
     cost = if ActiveModel::SecurePassword.min_cost
              Engine::MIN_COST
            else
@@ -27,7 +34,7 @@ class User < ApplicationRecord
 
   def remember
     self.remember_token = User.new_token
-    update_collumn :remember_digest, User.digest(remember_token)
+    update_column :remember_digest, User.digest(remember_token)
   end
 
   def authenticated? remember_token
@@ -35,6 +42,6 @@ class User < ApplicationRecord
   end
 
   def forget
-    update_collumn :remember_digest, nil
+    update_column :remember_digest, nil
   end
 end
