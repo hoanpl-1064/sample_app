@@ -5,7 +5,9 @@ ruby "2.7.1"
 
 gem "bcrypt"
 gem "bootstrap-sass", "3.4.1"
+gem "bootstrap-will_paginate", "1.0.0"
 gem "config"
+gem "faker", "1.7.3"
 gem "jbuilder", "~> 2.7"
 gem "mysql2", ">= 0.4.4"
 gem "puma", "~> 4.1"
@@ -13,6 +15,7 @@ gem "rails", "~> 6.0.3", ">= 6.0.3.4"
 gem "rails-i18n"
 gem "turbolinks", "~> 5"
 gem "webpacker", "~> 4.0"
+gem "will_paginate"
 
 gem "bootsnap", ">= 1.4.2", require: false
 
