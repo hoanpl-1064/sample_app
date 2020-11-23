@@ -1,11 +1,28 @@
-<% provide :title, t("title.main_title") %>
-<div class="center jumbotron">
+<% if logged_in? %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="user-info">
+        <%= render "shared/user_info" %>
+      </section>
+      <section class="micropost_form">
+        <%= render "shared/micropost_form" %>
+      </section>
+    </aside>
+    <div class="col-md-8">
+      <h3><%= t "post.micropost_feed" %></h3>
+      <%= render "shared/feed" %>
+    </div>
+  </div>
+<% else %>
+  <% provide :title, t("title.main_title") %>
+  <div class="center jumbotron">
 
-  <h1><%= t "home_title" %></h1>
-  <h2>
-    <%= t "home_param_content_1" %>
-    <%= link_to t("tutorial"), "http://www.railstutotial.org/" %>
-    <%= t "home_param_content_2" %>
-  </h2>
-  <%= link_to t("sign_up_now"), "#", class: "btn btn-lg btn-primary" %>
-</div>
+    <h1><%= t "home_title" %></h1>
+    <h2>
+      <%= t "home_param_content_1" %>
+      <%= link_to t("tutorial"), "http://www.railstutotial.org/" %>
+      <%= t "home_param_content_2" %>
+    </h2>
+    <%= link_to t("sign_up_now"), "#", class: "btn btn-lg btn-primary" %>
+  </div>
+<% end %>

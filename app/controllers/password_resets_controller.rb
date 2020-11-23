@@ -28,6 +28,8 @@ class PasswordResetsController < ApplicationController
       flash[:success] = t "account.update_success"
       redirect_to @user
     else
+      flash.now[:danger] = t "fail"
+
       render :edit
     end
   end

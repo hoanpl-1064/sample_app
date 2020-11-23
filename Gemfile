@@ -3,12 +3,15 @@ git_source(:github){|repo| "https://github.com/#{repo}.git"}
 
 ruby "2.7.1"
 
+gem "active_storage_validations", "0.8.2"
 gem "bcrypt"
 gem "bootstrap-sass", "3.4.1"
 gem "bootstrap-will_paginate", "1.0.0"
 gem "config"
 gem "faker", "1.7.3"
+gem "image_processing", "1.9.3"
 gem "jbuilder", "~> 2.7"
+gem "mini_magick", "4.9.5"
 gem "mysql2", ">= 0.4.4"
 gem "puma", "~> 4.1"
 gem "rails", "~> 6.0.3", ">= 6.0.3.4"
