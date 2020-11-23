@@ -1,9 +1,8 @@
 class User < ApplicationRecord
-  attr_accessor :remember_token, :activation_token
+  attr_accessor :remember_token, :activation_token, :reset_token
   before_save :downcase_email
   before_create :create_activation_digest
 
-  include BCrypt
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i.freeze
 
   validates :name, presence: true
@@ -20,16 +19,18 @@ class User < ApplicationRecord
 
   scope :sort_name, ->{order :name}
 
-  class << self
-    def digest string
-      cost = if ActiveModel::SecurePassword.min_cost
-               Engine::MIN_COST
-             else
-               Engine.cost
-             end
-      Password.create string, cost: cost
-    end
+  include BCrypt
 
+  def self.digest string
+    cost = if ActiveModel::SecurePassword.min_cost
+             Engine::MIN_COST
+           else
+             Engine.cost
+           end
+    Password.create string, cost: cost
+  end
+
+  class << self
     def new_token
       SecureRandom.urlsafe_base64
     end
@@ -52,11 +53,22 @@ class User < ApplicationRecord
   end
 
   def active
-    update_columns(:activated: true, :activated_at, Time.zone.now)
+    update_columns activated: true,
+                   activated_at: Time.zone.now
   end
 
   def send_activation_email
     UserMailer.account_activation(self).deliver_now
+  end
+
+  def create_reset_digest
+    self.reset_token = User.new_token
+    update_columns reset_digest: User.digest(reset_token),
+                   reset_sent_at: Time.zone.now
+  end
+
+  def send_password_reset_email
+    UserMailer.password_reset(self).deliver_now
   end
 
   private

@@ -75,6 +75,10 @@ class UsersController < ApplicationController
     # end
   end
 
+  def correct_user
+    redirect_to edit_user_path(current_user) unless current_user? @user
+  end
+
   def admin_user
     redirect_to(@user) unless current_user?(@user)
   end
