@@ -7,3 +7,9 @@ user:
     min_size: 50
 page:
   per_page: 5
+micro_post:
+  max_content: 140
+image:
+  size: 5
+  resize: 100
+  type: "image/jpeg,image/gif,image/png"
