@@ -13,3 +13,4 @@ image:
   size: 5
   resize: 100
   type: "image/jpeg,image/gif,image/png"
+  avt_size: 30

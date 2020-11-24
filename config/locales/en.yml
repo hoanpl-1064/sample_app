@@ -79,3 +79,7 @@ en:
     valid_file_format: "Must be a valid image format"
     less_than_X_mb: "should be less than %{X}MB"
     access_error: "Access error"
+    following: "Following"
+    follower: "Follower"
+    follow: "Follow"
+    unfollow: "Unfollow"
