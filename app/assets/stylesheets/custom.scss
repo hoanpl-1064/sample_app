@@ -3,6 +3,7 @@
 $color_milk : #fff;
 $color_border: #bbb;
 $color_white_grey: #e8e8e8;
+$color_gray_lighter: rgb(190, 190, 190);
 
 @mixin box_sizing {
   -moz-box-sizing: border-box;
@@ -92,6 +93,50 @@ aside {
   margin-top: 15px;
 }
 
+.stats {
+  overflow: auto;
+  margin-top: 0;
+  padding: 0;
+
+  a {
+    float: left;
+    padding: 0 10px;
+    border-left: 1px solid $color_gray_lighter;
+    color: gray;
+
+    &:first-child {
+      padding-left: 0;
+      border: 0;
+    }
+
+    &:hover {
+      text-decoration: none;
+      color: blue;
+    }
+  }
+
+  strong {
+    display: block;
+  }
+}
+
+.user_avatars {
+  overflow: auto;
+  margin-top: 10px;
+
+  .gravatar {
+    margin: 1px 1px;
+  }
+
+  a {
+    padding: 0;
+  }
+}
+
+.users.follow {
+  padding: 0;
+}
+
 /* forms */
 input,
 textarea,
@@ -124,14 +169,14 @@ input {
   }
 }
 
-.mt-2{
+.mt-2 {
   margin-top: 20px;
 }
 
-.checkbox{
+.checkbox {
   margin: 10px 0;
 
-  .remember__me{
+  .remember__me {
     font-weight: normal;
     margin-left: 20px;
   }
@@ -145,6 +190,7 @@ input {
 .users {
   list-style: none;
   margin: 0;
+
   li {
     overflow: auto;
     padding: 10px 0;
@@ -161,35 +207,42 @@ aside {
 
 span.picture {
   margin-top: 10px;
+
   input {
     border: 0;
   }
 }
 
-.microposts{
+.microposts {
   list-style: none;
   padding: 0;
+
   li {
     padding: 10px 0;
     border-top: 1px solid $color_white_grey;
   }
+
   .user {
     margin-top: 5em;
     padding-top: 0;
   }
+
   .gravatar {
     float: left;
     margin-right: 10px;
     margin-top: 5px;
   }
+
   .content {
     display: block;
     margin-left: 60px;
+
     img {
       display: block;
       padding: 5px 0;
     }
   }
+
   .timestamp {
     color: $gray-light;
     display: block;

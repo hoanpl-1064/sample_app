@@ -11,9 +11,9 @@ class MicropostsController < ApplicationController
       redirect_to root_url
     else
       flash.now[:danger] = t "post.micropost_created_fail"
-      @feed_items = current_user.feed.page(params[:page])
-                                .per_page Settings.page.per_page
-      render "static_pages/home"
+      @feed_items = current_user.feed.page(params[:page],
+                                           per_page: Settings.page.per_page)
+      render home_path
     end
   end
 

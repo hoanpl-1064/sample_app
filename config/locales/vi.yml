@@ -76,3 +76,7 @@ vi:
     valid_file_format: "Phải đúng định dạng"
     less_than_X_mb: "Dung lượng phải nhỏ hơn %{X}MB"
     access_error: "Lỗi truy cập"
+    following: "Đang theo dõi"
+    follower: "Người theo dõi"
+    follow: "Theo dõi"
+    unfollow: "Bỏ theo dõi"
